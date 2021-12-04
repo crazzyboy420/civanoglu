@@ -1,0 +1,60 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@font-face {
+    font-family: 'Studio Sans DEMO';
+    src: url('../fonts/StudioSansDEMO.eot');
+    src: url('../fonts/StudioSansDEMO.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/StudioSansDEMO.woff2') format('woff2'),
+    url('../fonts/StudioSansDEMO.woff') format('woff'),
+    url('../fonts/StudioSansDEMO.ttf') format('truetype'),
+    url('../fonts/StudioSansDEMO.svg#StudioSansDEMO') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Liberation Serif';
+    src: url('../fonts/LiberationSerif-Bold.eot');
+    src: url('../fonts/LiberationSerif-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/LiberationSerif-Bold.woff2') format('woff2'),
+    url('../fonts/LiberationSerif-Bold.woff') format('woff'),
+    url('../fonts/LiberationSerif-Bold.ttf') format('truetype'),
+    url('../fonts/LiberationSerif-Bold.svg#LiberationSerif-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Liberation Serif';
+    src: url('../fonts/LiberationSerif.eot');
+    src: url('../fonts/LiberationSerif.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/LiberationSerif.woff2') format('woff2'),
+    url('../fonts/LiberationSerif.woff') format('woff'),
+    url('../fonts/LiberationSerif.ttf') format('truetype'),
+    url('../fonts/LiberationSerif.svg#LiberationSerif') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Liberation Serif',sans-serif;
+    font-weight: bold;
+}
+
+.container{
+    margin: 0 auto;
+    max-width: 1200px;
+}
+.section-heading{
+    @apply text-4xl text-center w-full mb-10
+}
+.read-more-btn{
+    @apply inline-block bg-gray-800 text-white py-2 w-full text-center rounded
+}
+.box-shadow{
+    box-shadow: ;
+}
