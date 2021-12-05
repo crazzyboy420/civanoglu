@@ -55,6 +55,7 @@ h1,h2,h3,h4,h5,h6{
 .read-more-btn{
     @apply inline-block bg-gray-800 text-white py-2 w-full text-center rounded
 }
-.box-shadow{
-    box-shadow: ;
+.active-sticy-header{
+    background: #1a202c;
 }
+

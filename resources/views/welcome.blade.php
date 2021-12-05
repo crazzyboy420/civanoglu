@@ -51,6 +51,116 @@
                     <p class="text-2xl text-white -ml-4">Watch the video</p>
                 </div>
             </div>
+            <p class="mt-10 text-lg px-5">The Vuide Property portal has collected comprehensive information about the <strong>primary real estate market in Dubai.</strong> Here you can find villas, apartments,apartments,residences, and other types of real estate in Dubay.
+            We have prepared an <strong>intellinget housing selection system for your needs,you can search for real estate.</strong></p>
+        </div>
+        <div class="w-full flex text-center px-28 my-10">
+            <div class="min-w-max px-10">
+                <span class="bg-gray-800 inline-block rounded-full h-10 w-10 text-2xl leading-10 text-center text-white font-bold">1</span>
+                <p class="mt-4">Using <span class="underline">smart search</span></p>
+            </div>
+            <div class="min-w-max px-10">
+                <span class="bg-gray-800 inline-block rounded-full h-10 w-10 text-2xl leading-10 text-center text-white font-bold">2</span>
+                <p class="mt-4">By <span class="underline">map</span> and districets <br>of the city</p>
+            </div>
+            <div class="min-w-max px-10">
+                <span class="bg-gray-800 inline-block rounded-full h-10 w-10 text-2xl leading-10 text-center text-white font-bold">3</span>
+                <p class="mt-4">Using the advanced <br>filter</p>
+            </div>
+            <div class="min-w-max px-10">
+                <span class="bg-gray-800 inline-block rounded-full h-10 w-10 text-2xl leading-10 text-center text-white font-bold">4</span>
+                <p class="mt-4">Selection of orders from our <br>verified,licensed real estate agets</p>
+            </div>
+        </div>
+        <p class="px-32 mt-4 text-lg">You can also search for information about residential complexes and buildings,read useful articles on the forum.We do not impose on you the
+             choice of centain developers and agencies,you have the right to choose real estate and speciallist yorself</p>
+        <div class="w-full flex justify-center">
+            <div style="width: 2px" class="mt-4 bg-gray-400 h-32"></div>
+        </div>
+        <div class="w-full text-left flex mt-10">
+            <div class="w-1/2">
+                <p class="pr-16">We also talk about trends in real estate inte Emiretes, we prepare convenient
+                and profitable programs for real estate investments,such as: <strong>Joint purchases,purchase for
+                        lease with further post-services </strong> and other programs.For each investor,we
+                    <strong>Provide a personal manager</strong> who knows how the market is changing and is always ready to answer any of your questions
+                    who knows how the market is changing and is always ready to answer any of your questions We also talk about trends in real estate inte Emiretes, we prepare convenient
+                    and profitable programs for real estate investments,such as: <strong>Joint purchases,purchase for
+                        lease with further post-services </strong> and other programs.For each investor,we
+                    <strong>Provide a personal manager</strong> who knows how the market is changing and is always ready</p>
+            </div>
+            <div class="w-1/2">
+                <img style="height:270px" class="rounded w-full" src="/img/project-img.jpg" alt="">
+            </div>
+        </div>
+        <div class="w-full flex justify-center mt-10">
+            <a class="bg-gray-800 py-2 px-5 inline-block text-white rounded-xl mx-10" href="#">Start searching with filters</a>
+            <span class="text-2xl inline-block">or</span>
+            <a class="rounded-xl py-2 px-5 border-2 border-gray-800 inline-block mx-10" href="#">Start searching on map</a>
+        </div>
+        <div class="w-full">
+            <h2 class="text-4xl mb-10 mt-14">Last added objects</h2>
+            <div class="flex -mx-2 text-left">
+                <div class="flex-1 mx-2 bg-white rounded-md">
+                    <div class="bg-cover rounded-t-md bg-center relative bg-gray-700 w-full h-60" style="background-image: url('/img/room-1.jpg')">
+                        <div class="w-11 h-11 rounded-md top-3 left-3 absolute flex justify-center items-center bg-gray-300"><img src="/img/hart-icon.png" alt=""></div>
+                    </div>
+                    <div class="p-3">
+                        <h3 class="text-xl mb-2 text-gray-700">Studion Apartment For Sale in Al Khail Heights</h3>
+                        <span class="uppercase text-2xl text-gray-700 mb-1">Aed 540,000</span>
+                        <div class="w-full">
+                            <span class="inline-block border-2 mb-1 border-gray-100 mr-3 py-1 px-2 rounded-2xl">7 Bathroms</span>
+                            <span class="inline-block border-2 mb-1 border-gray-100 mr-3 py-1 px-2 rounded-2xl">5 Bedrooms</span>
+                            <span class="inline-block border-2 mb-1 border-gray-100 mr-3 py-1 px-2 rounded-2xl">15,000 ft <sup>2</sup></span>
+                        </div>
+                        <a href="#" class="inline-block w-full py-2 bg-gray-700 text-white rounded-xl text-center mt-2">More details</a>
+                    </div>
+                </div>
+                <div class="flex-1 mx-2 bg-white rounded-md">
+                    <div class="bg-cover rounded-t-md bg-center relative bg-gray-700 w-full h-60" style="background-image: url('/img/room-2.jpg')">
+                        <div class="w-11 h-11 rounded-md top-3 left-3 absolute flex justify-center items-center bg-gray-300"><img src="/img/hart-icon.png" alt=""></div>
+                    </div>
+                    <div class="p-3">
+                        <h3 class="text-xl mb-2 text-gray-700">1 Bed Apartment For Sale in Al Murad Towers</h3>
+                        <span class="uppercase text-2xl text-gray-700 mb-1">Aed 980,000</span>
+                        <div class="w-full">
+                            <span class="inline-block border-2 mb-1 border-gray-100 mr-3 py-1 px-2 rounded-2xl">7 Bathroms</span>
+                            <span class="inline-block border-2 mb-1 border-gray-100 mr-3 py-1 px-2 rounded-2xl">5 Bedrooms</span>
+                            <span class="inline-block border-2 mb-1 border-gray-100 mr-3 py-1 px-2 rounded-2xl">15,000 ft <sup>2</sup></span>
+                        </div>
+                        <a href="#" class="inline-block w-full py-2 bg-gray-700 text-white rounded-xl text-center mt-2">More details</a>
+                    </div>
+                </div>
+                <div class="flex-1 mx-2 bg-white rounded-md">
+                    <div class="bg-cover rounded-t-md bg-center relative bg-gray-700 w-full h-60" style="background-image: url('/img/room-3.jpg')">
+                        <div class="w-11 h-11 rounded-md top-3 left-3 absolute flex justify-center items-center bg-gray-300"><img src="/img/hart-icon.png" alt=""></div>
+                    </div>
+                    <div class="p-3">
+                        <h3 class="text-xl mb-2 text-gray-700">Hotel Apartment For Selin Al Barsh 1</h3>
+                        <span class="uppercase text-2xl text-gray-700 mb-1">aed 110,000,000</span>
+                        <div class="w-full">
+                            <span class="inline-block border-2 mb-1 border-gray-100 mr-3 py-1 px-2 rounded-2xl">7 Bathroms</span>
+                            <span class="inline-block border-2 mb-1 border-gray-100 mr-3 py-1 px-2 rounded-2xl">5 Bedrooms</span>
+                            <span class="inline-block border-2 mb-1 border-gray-100 mr-3 py-1 px-2 rounded-2xl">15,000 ft <sup>2</sup></span>
+                        </div>
+                        <a href="#" class="inline-block w-full py-2 bg-gray-700 text-white rounded-xl text-center mt-2">More details</a>
+                    </div>
+                </div>
+                <div class="flex-1 mx-2 bg-white rounded-md">
+                    <div class="bg-cover rounded-t-md bg-center relative bg-gray-700 w-full h-60" style="background-image: url('/img/room-4.jpg')">
+                        <div class="w-11 h-11 rounded-md top-3 left-3 absolute flex justify-center items-center bg-gray-300"><img src="/img/hart-icon.png" alt=""></div>
+                    </div>
+                    <div class="p-3">
+                        <h3 class="text-xl mb-2 text-gray-700">Studion Apartment For Sale in Al Khail Heights</h3>
+                        <span class="uppercase text-2xl text-gray-700 mb-1">Aed 490,000 </span>
+                        <div class="w-full">
+                            <span class="inline-block border-2 mb-1 border-gray-100 mr-3 py-1 px-2 rounded-2xl">7 Bathroms</span>
+                            <span class="inline-block border-2 mb-1 border-gray-100 mr-3 py-1 px-2 rounded-2xl">5 Bedrooms</span>
+                            <span class="inline-block border-2 mb-1 border-gray-100 mr-3 py-1 px-2 rounded-2xl">15,000 ft <sup>2</sup></span>
+                        </div>
+                        <a href="#" class="inline-block w-full py-2 bg-gray-700 text-white rounded-xl text-center mt-2">More details</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </x-guest-layout>

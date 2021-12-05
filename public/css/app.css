@@ -32222,8 +32222,8 @@ h1,h2,h3,h4,h5,h6{
   color: rgba(255, 255, 255, var(--tw-text-opacity))
 }
 
-.box-shadow{
-  box-shadow: ;
+.active-sticy-header{
+  background: #1a202c;
 }
 
 @media (min-width: 640px) {
@@ -188665,4 +188665,5 @@ h1,h2,h3,h4,h5,h6{
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
+
 

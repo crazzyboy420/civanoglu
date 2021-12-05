@@ -1,4 +1,4 @@
-<div class="fixed py-4 w-full px-12 flex flex-wrap justify-between items-center z-30">
+<div class="fixed py-2 w-full px-12 flex flex-wrap justify-between items-center z-30 sticy-header">
     <div class="min-w-max">
         <img src="/img/logo.png" alt="">
     </div>
