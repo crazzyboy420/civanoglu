@@ -6,6 +6,37 @@
             <p>The most convenient real estate search portal in dubai,start searching now!</p>
         </div>
     </div>
+    <div style="margin-top: -30px" class="container bg-white py-3 px-4 rounded-md shadow-xl flex relative z-10 flex items-center">
+       <div class="w-7/12">
+           <select class="border-none text-xl outline-none focus:outline-none focus:shadow-none" style="">
+               <option class="pr-4" value="Buy or Rent">Buy or Rent</option>
+               <option value="Buy">Buy</option>
+               <option value="Rent">Rent</option>
+           </select>
+           <span class="w-0.5 inline-block h-6 mx-4 bg-gray-500"></span>
+           <select class="border-none text-xl outline-none focus:outline-none focus:shadow-none" style="">
+               <option class="pr-4" value="Type">Type</option>
+               <option value="Buy">Buy</option>
+               <option value="Rent">Rent</option>
+           </select>
+           <span class="w-0.5 inline-block h-6 mx-4 bg-gray-500"></span>
+           <select class="border-none text-xl outline-none focus:outline-none focus:shadow-none" style="">
+               <option class="pr-4" value="bedrooms">Price</option>
+               <option value="Buy">Buy</option>
+               <option value="Rent">Rent</option>
+           </select>
+           <span class="w-0.5 inline-block h-6 mx-4 bg-gray-500"></span>
+           <select class="border-none text-xl outline-none focus:outline-none focus:shadow-none" style="">
+               <option class="pr-4" value="bedrooms">Bedrooms</option>
+               <option value="Buy">Buy</option>
+               <option value="Rent">Rent</option>
+           </select>
+       </div>
+        <div class="w-5/12">
+            <input type="search" placeholder="try to search for something" class="inline-block w-8/12 rounded-xl focus:outline-none border-gray-800">
+            <input type="submit" value="Search" class="bg-gray-700 text-white py-2.5 ml-10 px-8 rounded-xl cursor-pointer">
+        </div>
+    </div>
     <div class="py-32 text-center">
         <div class="container">
             <h2 class="text-4xl mb-5">Choose real estate by points,quickly <br> and efficintly with the help of <span style="text-decoration-thickness: 2px;" class="underline">Smart search</span></h2>
