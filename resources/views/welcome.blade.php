@@ -131,66 +131,23 @@
         <div class="w-full">
             <h2 class="text-4xl mb-10 mt-14">Last added objects</h2>
             <div class="flex -mx-2 text-left">
+                @foreach($latest_property as $property)
                 <div class="flex-1 mx-2 bg-white rounded-md">
                     <div class="bg-cover rounded-t-md bg-center relative bg-gray-700 w-full h-60" style="background-image: url('/img/room-1.jpg')">
                         <div class="w-11 h-11 rounded-md top-3 left-3 absolute flex justify-center items-center bg-gray-300"><img src="/img/hart-icon.png" alt=""></div>
                     </div>
                     <div class="p-3">
-                        <h3 class="text-xl mb-2 text-gray-700">Studion Apartment For Sale in Al Khail Heights</h3>
-                        <span class="uppercase text-2xl text-gray-700 mb-1">Aed 540,000</span>
+                        <h3 class="text-xl mb-2 text-gray-700">{{$property->name}}</h3>
+                        <span class="uppercase text-2xl text-gray-700 mb-1">{{$property->price}} bdt</span>
                         <div class="w-full">
                             <span class="inline-block border-2 mb-1 border-gray-100 mr-3 py-1 px-2 rounded-2xl">7 Bathroms</span>
                             <span class="inline-block border-2 mb-1 border-gray-100 mr-3 py-1 px-2 rounded-2xl">5 Bedrooms</span>
                             <span class="inline-block border-2 mb-1 border-gray-100 mr-3 py-1 px-2 rounded-2xl">15,000 ft <sup>2</sup></span>
                         </div>
-                        <a href="#" class="inline-block w-full py-2 bg-gray-700 text-white rounded-xl text-center mt-2">More details</a>
+                        <a href="{{route('property_single',$property->id)}}" class="inline-block w-full py-2 bg-gray-700 text-white rounded-xl text-center mt-2">More details</a>
                     </div>
                 </div>
-                <div class="flex-1 mx-2 bg-white rounded-md">
-                    <div class="bg-cover rounded-t-md bg-center relative bg-gray-700 w-full h-60" style="background-image: url('/img/room-2.jpg')">
-                        <div class="w-11 h-11 rounded-md top-3 left-3 absolute flex justify-center items-center bg-gray-300"><img src="/img/hart-icon.png" alt=""></div>
-                    </div>
-                    <div class="p-3">
-                        <h3 class="text-xl mb-2 text-gray-700">1 Bed Apartment For Sale in Al Murad Towers</h3>
-                        <span class="uppercase text-2xl text-gray-700 mb-1">Aed 980,000</span>
-                        <div class="w-full">
-                            <span class="inline-block border-2 mb-1 border-gray-100 mr-3 py-1 px-2 rounded-2xl">7 Bathroms</span>
-                            <span class="inline-block border-2 mb-1 border-gray-100 mr-3 py-1 px-2 rounded-2xl">5 Bedrooms</span>
-                            <span class="inline-block border-2 mb-1 border-gray-100 mr-3 py-1 px-2 rounded-2xl">15,000 ft <sup>2</sup></span>
-                        </div>
-                        <a href="#" class="inline-block w-full py-2 bg-gray-700 text-white rounded-xl text-center mt-2">More details</a>
-                    </div>
-                </div>
-                <div class="flex-1 mx-2 bg-white rounded-md">
-                    <div class="bg-cover rounded-t-md bg-center relative bg-gray-700 w-full h-60" style="background-image: url('/img/room-3.jpg')">
-                        <div class="w-11 h-11 rounded-md top-3 left-3 absolute flex justify-center items-center bg-gray-300"><img src="/img/hart-icon.png" alt=""></div>
-                    </div>
-                    <div class="p-3">
-                        <h3 class="text-xl mb-2 text-gray-700">Hotel Apartment For Selin Al Barsh 1</h3>
-                        <span class="uppercase text-2xl text-gray-700 mb-1">aed 110,000,000</span>
-                        <div class="w-full">
-                            <span class="inline-block border-2 mb-1 border-gray-100 mr-3 py-1 px-2 rounded-2xl">7 Bathroms</span>
-                            <span class="inline-block border-2 mb-1 border-gray-100 mr-3 py-1 px-2 rounded-2xl">5 Bedrooms</span>
-                            <span class="inline-block border-2 mb-1 border-gray-100 mr-3 py-1 px-2 rounded-2xl">15,000 ft <sup>2</sup></span>
-                        </div>
-                        <a href="#" class="inline-block w-full py-2 bg-gray-700 text-white rounded-xl text-center mt-2">More details</a>
-                    </div>
-                </div>
-                <div class="flex-1 mx-2 bg-white rounded-md">
-                    <div class="bg-cover rounded-t-md bg-center relative bg-gray-700 w-full h-60" style="background-image: url('/img/room-4.jpg')">
-                        <div class="w-11 h-11 rounded-md top-3 left-3 absolute flex justify-center items-center bg-gray-300"><img src="/img/hart-icon.png" alt=""></div>
-                    </div>
-                    <div class="p-3">
-                        <h3 class="text-xl mb-2 text-gray-700">Studion Apartment For Sale in Al Khail Heights</h3>
-                        <span class="uppercase text-2xl text-gray-700 mb-1">Aed 490,000 </span>
-                        <div class="w-full">
-                            <span class="inline-block border-2 mb-1 border-gray-100 mr-3 py-1 px-2 rounded-2xl">7 Bathroms</span>
-                            <span class="inline-block border-2 mb-1 border-gray-100 mr-3 py-1 px-2 rounded-2xl">5 Bedrooms</span>
-                            <span class="inline-block border-2 mb-1 border-gray-100 mr-3 py-1 px-2 rounded-2xl">15,000 ft <sup>2</sup></span>
-                        </div>
-                        <a href="#" class="inline-block w-full py-2 bg-gray-700 text-white rounded-xl text-center mt-2">More details</a>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
