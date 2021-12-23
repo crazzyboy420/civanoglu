@@ -2,12 +2,13 @@
     <a href="{{route('home')}}" class="min-w-max">
         <img src="/img/logo.png" alt="">
     </a>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
     <div class="min-w-max">
         <ul class="flex justify-center">
-            <li><a class="inline-block p-4 text-white" href="#">Home</a></li>
-            <li><a class="inline-block p-4 text-white" href="#">Buy</a></li>
-            <li><a class="inline-block p-4 text-white" href="#">Rent</a></li>
-            <li><a class="inline-block p-4 text-white" href="#">Buildings</a></li>
+            <li><a class="inline-block p-4 text-white" href="{{route('home')}}">Home</a></li>
+            <li><a class="inline-block p-4 text-white" href="{{route('propertise')}}?type=0">Land</a></li>
+            <li><a class="inline-block p-4 text-white" href="{{route('propertise')}}?type=2">Villa</a></li>
+            <li><a class="inline-block p-4 text-white" href="{{route('propertise')}}?type=1">Apartment</a></li>
             <li><a class="inline-block p-4 text-white" href="#">Smart search</a></li>
             <li><a class="inline-block p-4 text-white" href="#">For developers</a></li>
             <li><a class="inline-block p-4 text-white" href="#">For investors</a></li>

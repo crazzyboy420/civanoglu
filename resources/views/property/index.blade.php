@@ -10,14 +10,12 @@
                 <div>
                     <h2 class="text-3xl text-gray-500 mb-5">
                         Propertise
-                        @if(request('type') == 0)
+                        @if(request('type') == '0')
                            - Land
                         @elseif(request('type')==1)
                           - Apartment
                         @elseif(request('type')==2)
                           - Villa
-                        @else
-                          Propertise
                         @endif
                     </h2>
                 </div>
