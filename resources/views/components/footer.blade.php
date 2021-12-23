@@ -2,21 +2,21 @@
    <div class="pt-20">
        <h2 class="section-heading">Articles & Advices</h2>
        <div class="flex -ml-4">
-           <div style="margin-right: 10px;" class="flex-1 mr-4 flex bg-white rounded-xl">
+           <div class="flex-1 ml-4 flex bg-white rounded-xl">
                <div style="min-width: 130px; background-image: url('/img/artical-1.jpg')" class="bg-gray-800 bg-cover bg-center rounded-l-xl"></div>
                <div class="p-4">
                    <h3 class="text-xl mb-4">Rentin in dubai compared to the UK</h3>
                    <a href="#" class="read-more-btn">More details</a>
                </div>
            </div>
-           <div style="margin-right: 10px;" class="flex-1 mr-4 flex bg-white rounded-xl">
+           <div class="flex-1 ml-4 flex bg-white rounded-xl">
                <div style="min-width: 130px; background-image: url('/img/artical-2.jpg')" class="bg-gray-800 bg-cover bg-center rounded-l-xl"></div>
                <div class="p-4">
                    <h3 class="text-xl mb-4">Why use an agent when buying off-plans?</h3>
                    <a href="#" class="read-more-btn">More details</a>
                </div>
            </div>
-           <div style="margin-right: 10px;" class="flex-1 mr-4 flex bg-white rounded-xl">
+           <div class="flex-1 ml-4 flex bg-white rounded-xl">
                <div style="min-width: 130px; background-image: url('/img/artical-3.jpg')" class="bg-gray-800 bg-cover bg-center rounded-l-xl"></div>
                <div class="p-4">
                    <h3 class="text-xl mb-4">Rentin in dubai compared to the UK</h3>

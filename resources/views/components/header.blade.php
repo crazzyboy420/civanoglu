@@ -1,7 +1,7 @@
-<div class="fixed py-2 w-full px-12 flex flex-wrap justify-between items-center z-30 sticy-header">
-    <div class="min-w-max">
+<div class="fixed py-2 w-full top-0 px-12 flex flex-wrap justify-between items-center z-30 sticy-header {{request()->routeIs('home')? '':'genarel-header'}}">
+    <a href="{{route('home')}}" class="min-w-max">
         <img src="/img/logo.png" alt="">
-    </div>
+    </a>
     <div class="min-w-max">
         <ul class="flex justify-center">
             <li><a class="inline-block p-4 text-white" href="#">Home</a></li>
@@ -20,3 +20,6 @@
         <a href="#">🇺🇸</a>
     </div>
 </div>
+@if(!request()->routeIs('home'))
+<div class="mb-20"></div>
+@endif

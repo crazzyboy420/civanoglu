@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="41.969" height="56.815" viewBox="0 0 41.969 56.815">
+    <defs>
+        <style>
+            .cls-1{fill:#fff}.cls-2{filter:url(#Path_352)}
+        </style>
+        <filter id="Path_352" width="41.969" height="56.815" x="0" y="0" filterUnits="userSpaceOnUse">
+            <feOffset dy="3"/>
+            <feGaussianBlur result="blur" stdDeviation="3"/>
+            <feFlood flood-opacity=".161"/>
+            <feComposite in2="blur" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <g class="cls-2">
+        <path id="Path_352-2" d="M28 6l4.561 4.561-14.817 14.847 14.815 14.847L28 44.816 8.59 25.408z" class="cls-1" data-name="Path 352" transform="translate(.41)"/>
+    </g>
+</svg>

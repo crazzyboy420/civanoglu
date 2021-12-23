@@ -8,25 +8,25 @@
     </div>
     <div style="margin-top: -30px" class="container bg-white py-3 px-4 rounded-md shadow-xl flex relative z-10 flex items-center">
        <div class="w-7/12">
-           <select class="border-none text-xl outline-none focus:outline-none focus:shadow-none" style="">
+           <select class="border-none text-xl outline-none focus-box-shadow-none" style="">
                <option class="pr-4" value="Buy or Rent">Buy or Rent</option>
                <option value="Buy">Buy</option>
                <option value="Rent">Rent</option>
            </select>
            <span class="w-0.5 inline-block h-6 mx-4 bg-gray-500"></span>
-           <select class="border-none text-xl outline-none focus:outline-none focus:shadow-none" style="">
+           <select class="border-none text-xl outline-none focus-box-shadow-none" style="">
                <option class="pr-4" value="Type">Type</option>
                <option value="Buy">Buy</option>
                <option value="Rent">Rent</option>
            </select>
            <span class="w-0.5 inline-block h-6 mx-4 bg-gray-500"></span>
-           <select class="border-none text-xl outline-none focus:outline-none focus:shadow-none" style="">
+           <select class="border-none text-xl outline-none focus-box-shadow-none" style="">
                <option class="pr-4" value="bedrooms">Price</option>
                <option value="Buy">Buy</option>
                <option value="Rent">Rent</option>
            </select>
            <span class="w-0.5 inline-block h-6 mx-4 bg-gray-500"></span>
-           <select class="border-none text-xl outline-none focus:outline-none focus:shadow-none" style="">
+           <select class="border-none text-xl outline-none focus-box-shadow-none" style="">
                <option class="pr-4" value="bedrooms">Bedrooms</option>
                <option value="Buy">Buy</option>
                <option value="Rent">Rent</option>
@@ -130,22 +130,22 @@
         </div>
         <div class="w-full">
             <h2 class="text-4xl mb-10 mt-14">Last added objects</h2>
-            <div class="flex -mx-2 text-left">
+            <div class="grid grid-cols-4 -mr-2 text-left flex-wrap">
                 @foreach($latest_property as $property)
-                <div class="flex-1 mx-2 bg-white rounded-md">
-                    <div class="bg-cover rounded-t-md bg-center relative bg-gray-700 w-full h-60" style="background-image: url('/img/room-1.jpg')">
+                <div class="mr-2 bg-white rounded-md mb-6 relative pb-14">
+                    <div class="bg-cover rounded-t-md bg-center relative bg-gray-700 w-full h-60" style="background-image: url('{{$property->feature_img}}')">
                         <div class="w-11 h-11 rounded-md top-3 left-3 absolute flex justify-center items-center bg-gray-300"><img src="/img/hart-icon.png" alt=""></div>
                     </div>
                     <div class="p-3">
                         <h3 class="text-xl mb-2 text-gray-700">{{$property->name}}</h3>
                         <span class="uppercase text-2xl text-gray-700 mb-1">{{$property->price}} bdt</span>
                         <div class="w-full">
-                            <span class="inline-block border-2 mb-1 border-gray-100 mr-3 py-1 px-2 rounded-2xl">7 Bathroms</span>
-                            <span class="inline-block border-2 mb-1 border-gray-100 mr-3 py-1 px-2 rounded-2xl">5 Bedrooms</span>
+                            <span class="inline-block border-2 mb-1 border-gray-100 mr-3 py-1 px-2 rounded-2xl">{{$property->bathrooms}} Bathroms</span>
+                            <span class="inline-block border-2 mb-1 border-gray-100 mr-3 py-1 px-2 rounded-2xl">{{$property->bedrooms}} Bedrooms</span>
                             <span class="inline-block border-2 mb-1 border-gray-100 mr-3 py-1 px-2 rounded-2xl">15,000 ft <sup>2</sup></span>
                         </div>
-                        <a href="{{route('property_single',$property->id)}}" class="inline-block w-full py-2 bg-gray-700 text-white rounded-xl text-center mt-2">More details</a>
                     </div>
+                    <a href="{{route('property_single',$property->id)}}" class="inline-block w-11/12 left-3 py-2 bg-gray-700 bottom-3 text-white rounded-xl text-center absolute">More details</a>
                 </div>
                 @endforeach
             </div>

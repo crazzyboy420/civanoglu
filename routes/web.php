@@ -17,6 +17,7 @@ use App\Http\Controllers\PropertyController;
 
 Route::get('/',[HomeController::class,'home'])->name('home');
 Route::get('/property/{id}',[PropertyController::class,'single'])->name('property_single');
+Route::get('/propertise',[PropertyController::class,'index'])->name('propertise');
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
