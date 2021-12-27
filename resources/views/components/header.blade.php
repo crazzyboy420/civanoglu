@@ -9,11 +9,9 @@
             <li><a class="inline-block p-4 text-white" href="{{route('propertise')}}?type=0">Land</a></li>
             <li><a class="inline-block p-4 text-white" href="{{route('propertise')}}?type=2">Villa</a></li>
             <li><a class="inline-block p-4 text-white" href="{{route('propertise')}}?type=1">Apartment</a></li>
-            <li><a class="inline-block p-4 text-white" href="#">Smart search</a></li>
-            <li><a class="inline-block p-4 text-white" href="#">For developers</a></li>
-            <li><a class="inline-block p-4 text-white" href="#">For investors</a></li>
-            <li><a class="inline-block p-4 text-white" href="#">For agents</a></li>
-            <li><a class="inline-block p-4 text-white" href="#">Partnership</a></li>
+            <li><a class="inline-block p-4 text-white" href="{{route('page','contact-us')}}">Contact Us</a></li>
+            <li><a class="inline-block p-4 text-white" href="{{route('page','about-us')}}">About us</a></li>
+
         </ul>
     </div>
     <div class="min-w-max text-2xl">

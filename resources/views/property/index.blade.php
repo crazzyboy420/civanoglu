@@ -50,8 +50,8 @@
                     @endforeach
                 </div>
             </div>
-            <div class="w-3/12">
-
+            <div class="w-3/12 vartical-search-form">
+               @include('components.property-search-form')
             </div>
         </div>
        <div class="container">

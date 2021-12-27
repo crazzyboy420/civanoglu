@@ -6,53 +6,8 @@
             <p>The most convenient real estate search portal in dubai,start searching now!</p>
         </div>
     </div>
-    <div style="margin-top: -30px" class="container bg-white py-3 px-4 rounded-md shadow-xl flex relative z-10 flex items-center">
-       <div class="w-8/12">
-           <form action="{{route('propertise')}}" method="GET">
-               <select name="sale" class="border-none text-xl outline-none focus-box-shadow-none" style="">
-                   <option class="pr-4" value="">Buy or Rent</option>
-                   <option value="1">Buy</option>
-                   <option value="0">Rent</option>
-               </select>
-               <span class="w-0.5 inline-block h-6 mx-4 bg-gray-500"></span>
-               <select name="type" class="border-none text-xl outline-none focus-box-shadow-none" style="">
-                   <option class="pr-4" value="">Type</option>
-                   <option value="0">Land</option>
-                   <option value="1">Apartment</option>
-                   <option value="2">Villa</option>
-               </select>
-               <span class="w-0.5 inline-block h-6 mx-4 bg-gray-500"></span>
-               <select name="price" class="border-none text-xl outline-none focus-box-shadow-none" style="">
-                   <option class="pr-4" value="">Price</option>
-                   <option value="3000000">0-3000000</option>
-                   <option value="4000000">3000000-4000000</option>
-                   <option value="5000000">4000000-5000000</option>
-                   <option value="6000000">5000000-6000000</option>
-                   <option value="7000000">6000000-7000000</option>
-                   <option value="8000000">7000000-8000000</option>
-                   <option value="9000000">8000000-9000000</option>
-                   <option value="9000000+">9000000+</option>
-               </select>
-               <span class="w-0.5 inline-block h-6 mx-4 bg-gray-500"></span>
-               <select name="bedrooms" class="border-none text-xl outline-none focus-box-shadow-none" style="">
-                   <option class="pr-4" value="">Bedrooms</option>
-                   <option value="1">1</option>
-                   <option value="2">2</option>
-                   <option value="3">3</option>
-                   <option value="4">4</option>
-                   <option value="5">5</option>
-                   <option value="6">6</option>
-                   <option value="7">7</option>
-                   <option value="8">8</option>
-                   <option value="9">9</option>
-                   <option value="10">10</option>
-               </select>
-       </div>
-        <div class="w-4/12">
-            <input type="search" placeholder="try to search for something" class="inline-block w-8/12 rounded-xl focus:outline-none border-gray-800">
-            <input type="submit" value="Search" class="bg-gray-700 text-white py-2.5 ml-10 px-8 rounded-xl cursor-pointer">
-           </form>
-        </div>
+    <div style="margin-top: -30px" class="welcome-property-search-form container bg-white py-3 px-4 rounded-md shadow-xl flex relative z-10 flex items-center">
+        @include('components.property-search-form',['locations'=>$locations])
     </div>
     <div class="py-32 text-center">
         <div class="container">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Location;
 use App\Models\Property;
 use Illuminate\Http\Request;
 
@@ -12,18 +13,25 @@ class PropertyController extends Controller
         return view('property.single',['property_single' => $property]);
     }
     public  function  index(Request  $request){
+        $location = Location::select('id','name')->get();
         $all_propertise = Property::latest();
-        if (!empty($request->type)){
+        if (!empty($request->type) || $request->type == '0'){
             $all_propertise = $all_propertise->where('type',$request->type);
         }
-        if (!empty($request->sale)){
+        if (!empty($request->location)){
+            $all_propertise = $all_propertise->where('location',$request->location);
+        }
+
+        if (!empty($request->sale) || $request->sale == '0'){
             $all_propertise = $all_propertise->where('sale',$request->sale);
         }
         if (!empty($request->bedrooms)){
             $all_propertise = $all_propertise->where('bedrooms',$request->bedrooms);
         }
+        if (!empty($request->name_search)){
+            $all_propertise = $all_propertise->where('name', 'LIKE', '%'.$request->get('name_search').'%');
+        }
         if (!empty($request->price)){
-            //$all_propertise = $all_propertise->where('bedrooms',$request->bedrooms);
             if($request->price == 3000000){
                 $all_propertise = $all_propertise->where('price','<=','3000000');
             }
@@ -50,6 +58,6 @@ class PropertyController extends Controller
             }
         }
         $all_propertise = $all_propertise->paginate(15);
-        return view('property.index',['all_property' => $all_propertise]);
+        return view('property.index',['all_property' => $all_propertise,'locations'=>$location]);
     }
 }
