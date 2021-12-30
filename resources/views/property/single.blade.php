@@ -58,7 +58,7 @@
                     </div>
                     <div class="w-1/4 border-l-2 border-gray-300 pl-2">
                         <span class="text-gray-400 text-md block">Bathrooms: <strong class="text-gray-700 text-lg">{{$property_single->bathrooms}}</strong></span>
-                        <span class="text-gray-400 text-md block">Location: <strong class="text-gray-700 text-lg">{{$property_single->location}}</strong></span>
+                        <span class="text-gray-400 text-md block">Location: <strong class="text-gray-700 text-lg">{{$property_single->locations->name}}</strong></span>
                     </div>
                     <div class="w-1/4 border-l-2 border-gray-300 pl-2">
                         <span class="text-gray-400 text-md block">Land size sqm: <strong class="text-gray-700 text-lg">{{$property_single->gross_sqm}}</strong></span>
@@ -94,15 +94,31 @@
                 <p class="p-4 text-center" style="border:1px solid #b93006">Subscribe to Property Turkey media for blogs/news/videos</p>
                 <div class="px-4 py-6 mt-4 custom-border" style="background-color:#e6e2d7">
                     <h3 class="text-2xl text-gray-600 pb-6">Enquire about this property</h3>
-                <form action="">
+                    @if(Session::get('message'))
+                    <p class="text-green-700 py-2 bg-green-200 w-full text-center mb-2">{{Session::get('message')}}</p>
+                    @endif
+                <form action="{{route('property-inquiry',$property_single->id)}}" method="POST">
+                    @csrf
                     <label class="block text-xl mb-2" for="name">Name:</label>
-                    <input class="w-full border-none mb-4 focus-box-shadow-none py-4" type="text" placeholder="First Name">
-                    <label class="block text-xl mb-2" for="name">Phome:</label>
-                    <input class="w-full border-none mb-4 focus-box-shadow-none py-4" type="tel" placeholder="Phone">
-                    <label class="block text-xl mb-2" for="name">Email:</label>
-                    <input class="w-full border-none mb-4 focus-box-shadow-none py-4" type="email" placeholder="E-mail">
-                    <label class="block text-xl mb-2" for="name">Massage:</label>
-                    <textarea placeholder="Masseage" class="border-none mb-4 w-full h-32 focus-box-shadow-none" name="">I'm interested in this property</textarea>
+                    <input name="name" id="name" value="{{old('name')}}" class="w-full border-none mb-4 focus-box-shadow-none py-4" required type="text" placeholder="First Name">
+                    @error('name')
+                    <p class="text-red-700 text-sm pb-2">{{$message}}</p>
+                    @enderror
+                    <label class="block text-xl mb-2" for="phone">Phone:</label>
+                    <input class="w-full border-none mb-4 focus-box-shadow-none py-4" type="tel" value="{{old('phone')}}" required  name="phone" id="phone" placeholder="Phone">
+                    @error('phone')
+                    <p class="text-red-700 text-sm pb-2">{{$message}}</p>
+                    @enderror
+                    <label class="block text-xl mb-2" for="email">Email:</label>
+                    <input class="w-full border-none mb-4 focus-box-shadow-none py-4" value="{{old('email')}}" required  name="email" id="email" type="email" placeholder="E-mail">
+                    @error('email')
+                    <p class="text-red-700 text-sm pb-2">{{$message}}</p>
+                    @enderror
+                    <label class="block text-xl mb-2" for="massage">Massage:</label>
+                    <textarea placeholder="Masseage" class="border-none mb-4 w-full h-32 focus-box-shadow-none" required name="massage" id="massage">{{old('massage')}}</textarea>
+                    @error('massage')
+                    <p class="text-red-700 text-sm pb-2">{{$message}}</p>
+                    @enderror
                     <input class="w-full border-none outline-none py-4 bg-red-700 text-white" type="submit" value="REQUEST DETAILS">
                 </form>
                 </div>

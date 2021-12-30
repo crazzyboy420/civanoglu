@@ -163,3 +163,34 @@ button.gallery-arrow.arrow-prev.slick-arrow {
     margin-bottom: 5px;
     color: #ddd;
 }
+.civanoglu-input{
+    @apply w-full border border-gray-600 py-2 px-4 focus:ring-0 focus:border-gray-500
+}
+.civanoglu-input:focus{
+
+}
+.civanoglu-label{
+    @apply block text-gray-500 mb-2 cursor-pointer uppercase
+}
+button.delete span {
+    display: inline-block;
+    width: 1.3px;
+    height: 10px;
+    background: red;
+    position: absolute;
+    z-index: 1;
+}
+
+button.delete {
+    right: 14px;
+    top: 7%;
+    position: absolute;
+}
+
+button.delete span:nth-child(1) {
+    transform: rotate(45deg);
+}
+
+button.delete span:nth-child(2) {
+    transform: rotate(-45deg);
+}

@@ -7,7 +7,7 @@
         <ul class="flex justify-center">
             <li><a class="inline-block p-4 text-white" href="{{route('home')}}">Home</a></li>
             <li><a class="inline-block p-4 text-white" href="{{route('propertise')}}?type=0">Land</a></li>
-            <li><a class="inline-block p-4 text-white" href="{{route('propertise')}}?type=2">Villa</a></li>
+            <li><a class="inline-block p-4 text-white" href="{{route('propertise')}}?type=2">{{__('Villa')}}</a></li>
             <li><a class="inline-block p-4 text-white" href="{{route('propertise')}}?type=1">Apartment</a></li>
             <li><a class="inline-block p-4 text-white" href="{{route('page','contact-us')}}">Contact Us</a></li>
             <li><a class="inline-block p-4 text-white" href="{{route('page','about-us')}}">About us</a></li>
@@ -15,8 +15,8 @@
         </ul>
     </div>
     <div class="min-w-max text-2xl">
-        <a href="#">🇧🇩</a>
-        <a href="#">🇺🇸</a>
+        <a href="{{LaravelLocalization::getLocalizedUrl('bn')}}">🇧🇩</a>
+        <a href="{{LaravelLocalization::getLocalizedUrl('en')}}">🇺🇸</a>
     </div>
 </div>
 @if(!request()->routeIs('home'))
