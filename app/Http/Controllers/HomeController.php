@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Location;
+use App\Models\Page;
 use App\Models\Property;
 use Illuminate\Http\Request;
 
@@ -16,4 +17,14 @@ class HomeController extends Controller
            'locations'     => $locations,
        ]);
    }
+    public function single($slug){
+        $page = Page::where('slug',$slug)->first();
+        if(!empty($page)){
+            return view('page.page',[
+                'page' => $page,
+            ]);
+        }else{
+            return abort('404');
+        }
+    }
 }

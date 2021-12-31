@@ -21,33 +21,40 @@ class DashboardController extends Controller
       $location = Location::all();
       return view('admin.property.addProperty',['locations' =>$location]);
   }
-  public function createProperty(Request $request){
-      $request->validate([
-         'name' =>'required',
-         'name_bn'=>'required',
-         'feature_img'=>'required|image',
-         'gallery_img'=>'required',
-         'price'=>'required|integer',
-         'location'=>'required',
-         'sale'=>'required',
-         'type'=>'required',
-         'bathrooms'=>'integer',
-         'drowing_room'=>'integer',
-         'gross_sqm'=>'integer',
-         'net_sqm'=>'integer',
-         'pool'=>'integer',
-         'overview'=>'required',
-         'overview_bn'=>'required',
-         'description'=>'required',
-         'description_bn'=>'required',
-      ]);
+  public function validation(){
+      return [
+          'name' =>'required',
+          'name_bn'=>'required',
+          'price'=>'required|integer',
+          'location'=>'required',
+          'sale'=>'required',
+          'type'=>'required',
+          'bathrooms'=>'integer',
+          'drowing_room'=>'integer',
+          'gross_sqm'=>'integer',
+          'net_sqm'=>'integer',
+          'pool'=>'integer',
+          'overview'=>'required',
+          'overview_bn'=>'required',
+          'description'=>'required',
+          'description_bn'=>'required',
+      ];
+  }
+  public function saveAndUpdateProperty($propertise,$request)
+  {
 
-      $propertise = new Property();
       $propertise->name = $request->name;
       $propertise->name_bn = $request->name_bn;
-      $feature_img_name = time().'-'.$request->feature_img->getClientOriginalName();
-      $request->feature_img->storeAs('public/uploads',$feature_img_name);
-      $propertise->feature_img = $feature_img_name;
+
+
+      if (!empty($request->feature_img)){
+          if (!empty($propertise->feature_img)){
+              Storage::delete('/public/uploads/'.$propertise->feature_img);
+          }
+          $feature_img_name = time() . '-' . $request->feature_img->getClientOriginalName();
+          $request->feature_img->storeAs('public/uploads', $feature_img_name);
+          $propertise->feature_img = $feature_img_name;
+      }
       $propertise->price = $request->price;
       $propertise->location = $request->location;
       $propertise->sale = $request->sale;
@@ -65,18 +72,37 @@ class DashboardController extends Controller
       $propertise->description = $request->description;
       $propertise->description_bn = $request->description_bn;
       $propertise->save();
-
+     if(!empty($request->gallery_img)){
       foreach ($request->gallery_img as $image){
-          $gallery_image_name = time().'-'.$image->getClientOriginalName();
-          $image->storeAs('public/uploads',$gallery_image_name);
-          $madia = new Media();
-          $madia->name = $gallery_image_name;
-          $madia->property_id =  $propertise->id;
-          $madia->save();
-
+          if(!empty($image)){
+              $gallery_image_name = time().'-'.$image->getClientOriginalName();
+              $image->storeAs('public/uploads',$gallery_image_name);
+              $madia = new Media();
+              $madia->name = $gallery_image_name;
+              $madia->property_id =  $propertise->id;
+              $madia->save();
+          }
       }
-     return redirect(route('dashboard-propertise'));
+     }
+  }
+  public function createProperty(Request $request){
+      $update_validation = $this->validation()[] = [
+          'feature_img'=>'required|image',
+          'gallery_img'=>'required',
+      ];
+      $request->validate($update_validation);
 
+      $propertise = new Property();
+      $this->saveAndUpdateProperty($propertise,$request);
+     return redirect(route('dashboard-propertise'))->with(['message' => 'Property Created successfully']);
+
+  }
+  public function updateProperty($property_id,Request $request){
+      $request->validate($this->validation());
+
+      $propertise = Property::findOrFail($property_id);
+      $this->saveAndUpdateProperty($propertise,$request);
+      return redirect(route('dashboard-propertise'))->with(['message' => 'Property Update successfully']);
   }
   public function deleteMedia(Request $request,$media_id){
       $media = Media::findOrFail($media_id);
@@ -93,5 +119,18 @@ class DashboardController extends Controller
             'property'=>$property,
             'locations' => $location,
         ]);
+    }
+    public function deleteProperty($dproperty_id){
+      $property = Property::findOrFail($dproperty_id);
+      //Feature image delete
+        Storage::delete('/public/uploads/'.$property->feature_img);
+      //gallery image delete
+      foreach ($property->gallery as $gallery){
+          $media = Media::findOrFail($gallery->id);
+          Storage::delete('/public/uploads/'.$gallery->name);
+          $media->delete();
+      }
+      $property->delete();
+      return back()->with(['message' => 'Property deleted Successfully']);
     }
 }

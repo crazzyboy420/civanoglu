@@ -24,12 +24,12 @@
             <div class="w-9/12 pr-6">
                 <div class="gallery-slider mt-16">
                     @foreach($property_single->gallery as $gallery)
-                    <div style="background-image: url('{{$gallery->name}}')" class="single-gallery-item w-full bg-center bg-center"></div>
+                    <div style="background-image: url('{{'/uploads/'.$gallery->name}}')" class="single-gallery-item w-full bg-center bg-center"></div>
                     @endforeach
                 </div>
                 <div class="thumnail-gallery text-center mt-6">
                     @foreach($property_single->gallery as $thumb_gallery)
-                    <div style="background-image: url('{{$thumb_gallery->name}}')" class="single-thumnail-item w-full bg-center bg-center"></div>
+                    <div style="background-image: url('{{'/uploads/'.$thumb_gallery->name}}')" class="single-thumnail-item w-full bg-center bg-center"></div>
                     @endforeach
                 </div>
                 <div class="custom-border flex bg-white py-10 pl-10 mt-10">

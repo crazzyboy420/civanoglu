@@ -33,7 +33,7 @@
                 <div class="grid grid-cols-3 -mr-2 text-left flex-wrap">
                     @foreach($all_property as $property)
                         <div class="mr-2 bg-white rounded-md mb-6 relative pb-14">
-                            <div class="bg-cover rounded-t-md bg-center relative bg-gray-700 w-full h-60" style="background-image: url('{{$property->feature_img}}')">
+                            <div class="bg-cover rounded-t-md bg-center relative bg-gray-700 w-full h-60" style="background-image: url('{{'/uploads/'.$property->feature_img}}')">
                                 <div class="w-11 h-11 rounded-md top-3 left-3 absolute flex justify-center items-center bg-gray-300"><img src="/img/hart-icon.png" alt=""></div>
                             </div>
                             <div class="p-3">

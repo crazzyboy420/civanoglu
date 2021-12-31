@@ -29,7 +29,7 @@
                             </div>
                         @endforeach
                     </div>
-                    <form action="" method="POST" enctype="multipart/form-data" class="w-full">@csrf
+                    <form action="{{route('update-property',$property->id)}}" method="POST" enctype="multipart/form-data" class="w-full">@csrf
                         <div class="flex -mx-4 mb-6">
                             <div class="px-4 flex-1">
                                 <label class="civanoglu-label" for="name">Name:</label>
@@ -151,7 +151,7 @@
                                 <select class="civanoglu-input" id="bathrooms" name="bathrooms">
                                     <option value="">Select option</option>
                                     @for($x=0;$x <= 10;$x++)
-                                        <option {{$property->drowing_room == $x ?'selected="selected':''}} value="{{$x}}">{{$x}}</option>
+                                        <option {{$property->bathrooms == $x ?'selected="selected':''}} value="{{$x}}">{{$x}}</option>
                                     @endfor
                                 </select>
                                  @error('bathrooms')
