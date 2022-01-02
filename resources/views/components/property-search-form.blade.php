@@ -1,6 +1,6 @@
 
 <form action="{{route('propertise')}}" method="GET" class="flex items-center w-full">
-    <div class="w-8/12 flex justify-between items-center mr-3">
+    <div class="w-8/12 flex justify-between items-center mr-2">
         <div class="flex flex-col">
             <label for="location">Locations</label>
             <select id="location" name="location" class="border-none outline-none focus-box-shadow-none" style="">
