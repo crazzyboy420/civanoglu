@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Location;
 use App\Models\Media;
 use App\Models\Property;
+use Flasher\Prime\FlasherInterface;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -85,7 +86,7 @@ class DashboardController extends Controller
       }
      }
   }
-  public function createProperty(Request $request){
+  public function createProperty(Request $request,FlasherInterface $flasher){
       $update_validation = $this->validation()[] = [
           'feature_img'=>'required|image',
           'gallery_img'=>'required',
@@ -94,15 +95,17 @@ class DashboardController extends Controller
 
       $propertise = new Property();
       $this->saveAndUpdateProperty($propertise,$request);
-     return redirect(route('dashboard-propertise'))->with(['message' => 'Property Created successfully']);
+      $flasher->addSuccess('Property Created successfully');
+     return redirect(route('dashboard-propertise'));
 
   }
-  public function updateProperty($property_id,Request $request){
+  public function updateProperty($property_id,Request $request,FlasherInterface $flasher){
       $request->validate($this->validation());
 
       $propertise = Property::findOrFail($property_id);
       $this->saveAndUpdateProperty($propertise,$request);
-      return redirect(route('dashboard-propertise'))->with(['message' => 'Property Update successfully']);
+      $flasher->addSuccess('Property Update successfully');
+      return redirect(route('dashboard-propertise'));
   }
   public function deleteMedia(Request $request,$media_id){
       $media = Media::findOrFail($media_id);
@@ -120,7 +123,7 @@ class DashboardController extends Controller
             'locations' => $location,
         ]);
     }
-    public function deleteProperty($dproperty_id){
+    public function deleteProperty($dproperty_id,FlasherInterface $flasher){
       $property = Property::findOrFail($dproperty_id);
       //Feature image delete
         Storage::delete('/public/uploads/'.$property->feature_img);
@@ -131,6 +134,7 @@ class DashboardController extends Controller
           $media->delete();
       }
       $property->delete();
-      return back()->with(['message' => 'Property deleted Successfully']);
+      $flasher->addSuccess('Property deleted Successfully');
+      return back();
     }
 }

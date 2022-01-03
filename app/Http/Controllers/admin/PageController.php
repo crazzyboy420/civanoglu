@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Page;
+use Flasher\Prime\FlasherInterface;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -48,13 +49,13 @@ class PageController extends Controller
         $page->content = $request->contents;
         $page->save();
     }
-    public function store(Request $request)
+    public function store(Request $request, FlasherInterface $flasher)
     {
         $request->validate($this->pageValidate());
         $page = new Page();
         $this->saveAndUpdate($page,$request);
-
-        return redirect(route('admin-page.index'))->with(['message' =>'Page Created Successfully']);
+        $flasher->addSuccess('Page Created Successfully');
+        return redirect(route('admin-page.index'));
     }
 
     /**
@@ -87,14 +88,14 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id,FlasherInterface $flasher)
     {
        $request->validate($this->pageValidate());
 
        $page = Page::findOrFail($id);
        $this->saveAndUpdate($page,$request);
-
-        return redirect(route('admin-page.index'))->with(['message' => 'Page Edit Successully']);;
+        $flasher->addSuccess('Page Update Successully');
+        return redirect(route('admin-page.index'));
     }
 
     /**
@@ -103,11 +104,12 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id,FlasherInterface $flasher)
     {
         $page = Page::findOrFail($id);
         $page->delete();
-        return back()->with(['message' => 'Page Deleted Successully']);
+        $flasher->addSuccess('Page Deleted Successully');
+        return back();
     }
 }
 

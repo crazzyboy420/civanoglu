@@ -6,6 +6,7 @@ use App\Models\Location;
 use App\Models\Page;
 use App\Models\Property;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 
 class HomeController extends Controller
 {
@@ -26,5 +27,11 @@ class HomeController extends Controller
         }else{
             return abort('404');
         }
+    }
+
+    public function currencyChange($code){
+       Cookie::queue('currency',$code,3600);
+
+       return back();
     }
 }

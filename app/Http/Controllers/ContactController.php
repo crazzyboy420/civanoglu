@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\ProcessContactMail;
 use App\Mail\ContactMail;
 use App\Models\Contact;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+
 
 class ContactController extends Controller
 {
@@ -23,7 +25,9 @@ class ContactController extends Controller
         $conact->email = $request->email;
         $conact->massege = $request->massage."\r\n".' This massage send via '.route('property_single',$property_id).' website';
         $conact->save();
-         Mail::send(new ContactMail($conact));
+
+        //Mail sent with queue
+        ProcessContactMail::dispatch($conact);
         return redirect(route('property_single',$property_id))->with(['message' => 'Your message has been send']);
     }
 }

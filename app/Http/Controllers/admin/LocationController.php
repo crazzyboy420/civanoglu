@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use Flasher\Prime\FlasherInterface;
 use Illuminate\Http\Request;
 use App\Models\Location;
 
@@ -35,7 +36,7 @@ class LocationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,FlasherInterface $flasher)
     {
         $request->validate([
             'location_name' => 'required',
@@ -43,8 +44,8 @@ class LocationController extends Controller
         $addlocation = new Location();
         $addlocation->name = $request->location_name;
         $addlocation->save();
-
-        return redirect(route('admin-location.index'))->with(['message' => 'Location Added Successfully']);
+        $flasher->addSuccess('Location Added Successfully');
+        return redirect(route('admin-location.index'));
     }
 
     /**
@@ -77,7 +78,7 @@ class LocationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id,FlasherInterface $flasher)
     {
         $request->validate([
             'location_name' => 'required',
@@ -85,8 +86,8 @@ class LocationController extends Controller
         $updae_location = Location::findOrFail($id);
         $updae_location->name = $request->location_name;
         $updae_location->save();
-
-        return redirect(route('admin-location.index'))->with(['message' =>'Location Updated Successfully']);
+        $flasher->addSuccess('Location Updated Successfully');
+        return redirect(route('admin-location.index'));
     }
 
     /**
@@ -95,10 +96,11 @@ class LocationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id,FlasherInterface $flasher)
     {
         $location = Location::findOrFail($id);
         $location->delete();
-        return redirect(route('admin-location.index'))->with(['message' => 'Location Deleted Successfully']);
+        $flasher->addSuccess('Location Deleted Successfully');
+        return redirect(route('admin-location.index'));
     }
 }

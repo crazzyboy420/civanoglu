@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Flasher\Prime\FlasherInterface;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Testing\Fluent\Concerns\Has;
@@ -51,14 +52,14 @@ class UserController extends Controller
         $user->password = Hash::make($request->password);
         $user->save();
     }
-    public function store(Request $request)
+    public function store(Request $request,FlasherInterface $flasher)
     {
      $request->validate($this->userValidation());
 
      $user = new User();
      $this->saveAndUpdateUser($user,$request);
-
-     return redirect(route('admin-user.index'))->with(['message' =>'New User Added Successfully']);
+     $flasher->addSuccess('New User Added Successfully');
+     return redirect(route('admin-user.index'));
     }
 
     /**
@@ -92,13 +93,13 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id,FlasherInterface $flasher)
     {
         $request->validate($this->userValidation());
         $user = User::findOrFail($id);
         $this->saveAndUpdateUser($user,$request);
-
-        return redirect(route('admin-user.index'))->with(['message' =>'User Updated Successfully']);
+        $flasher->addSuccess('User Updated Successfully');
+        return redirect(route('admin-user.index'));
 
     }
 
@@ -108,10 +109,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id,FlasherInterface $flasher)
     {
         $user = User::findOrFail($id);
         $user->delete();
-        return redirect(route('admin-user.index'))->with(['message' =>'User deleted Successfully']);
+        $flasher->addSuccess('User deleted Successfully');
+        return redirect(route('admin-user.index'));
     }
 }

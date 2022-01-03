@@ -27,6 +27,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/propertise',[PropertyController::class,'index'])->name('propertise');
     Route::get('/page/{slug}',[HomeController::class,'single'])->name('page');
     Route::post('/property-inquiry/{id}',[ContactController::class,'propertyInquiry'])->name('property-inquiry');
+    Route::get('/currency/{code}',[HomeController::class,'currencyChange'])->name('currency');
 });
 Route::middleware(['auth'])->group(function(){
     Route::get('/admin',[DashboardController::class,'Index'])->name('dashboard-index');

@@ -110,7 +110,7 @@
                     </div>
                     <div class="p-3">
                         <h3 class="text-xl mb-2 text-gray-700">{{$property->name}}</h3>
-                        <span class="uppercase text-2xl text-gray-700 mb-1">{{$property->price}} bdt</span>
+                        <span class="uppercase text-2xl text-gray-700 mb-1">{{$property->dynmic_price($property->price)}} bdt</span>
                         <div class="w-full">
                             <span class="inline-block border-2 mb-1 border-gray-100 mr-3 py-1 px-2 rounded-2xl">{{$property->bathrooms}} Bathroms</span>
                             <span class="inline-block border-2 mb-1 border-gray-100 mr-3 py-1 px-2 rounded-2xl">{{$property->bedrooms}} Bedrooms</span>

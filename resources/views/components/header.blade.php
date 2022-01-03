@@ -14,9 +14,15 @@
 
         </ul>
     </div>
-    <div class="min-w-max text-2xl">
-        <a href="{{LaravelLocalization::getLocalizedUrl('bn')}}">🇧🇩</a>
-        <a href="{{LaravelLocalization::getLocalizedUrl('en')}}">🇺🇸</a>
+    <div class="min-w-max text-2xl flex">
+        <div class="flex mr-8 items-center">
+            <a class="mr-3 mt-1 text-xl text-white" href="{{route('currency','usd')}}">$</a>
+            <a style="font-size: 28px" class="text-white font-bold" href="{{route('currency','bdt')}}">৳</a>
+        </div>
+        <div class="flex">
+            <a href="{{LaravelLocalization::getLocalizedUrl('bn')}}">🇧🇩</a>
+            <a class="ml-3" href="{{LaravelLocalization::getLocalizedUrl('en')}}">🇺🇸</a>
+        </div>
     </div>
 </div>
 @if(!request()->routeIs('home'))
