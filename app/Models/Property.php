@@ -27,10 +27,10 @@ class Property extends Model
             $get = Http::get('https://freecurrencyapi.net/api/v2/latest?apikey=76c89170-6178-11ec-98f1-5f7ce0abde0a&base_currency=BDT');
             if ($get->successful()){
                 $usd = intval($bdt * $get->json()['data']['USD']);
-                return $usd.'USD';
+                return $usd.' USD';
             }
         }else{
-            return $bdt.'BDT';
+            return $bdt.' BDT';
         }
     }
 }
