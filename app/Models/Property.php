@@ -23,10 +23,10 @@ class Property extends Model
     }
     public function dynmic_price($bdt){
         $currendt_currency = Cookie::get('currency','bdt');
-        $get = Http::get('https://freecurrencyapi.net/api/v2/latest?apikey=76c89170-6178-11ec-98f1-5f7ce0abde0a&base_currency=TRY');
         if ($currendt_currency == 'usd'){
+            $get = Http::get('https://freecurrencyapi.net/api/v2/latest?apikey=76c89170-6178-11ec-98f1-5f7ce0abde0a&base_currency=BDT');
             if ($get->successful()){
-                $usd = $bdt * $get->json()['data']['USD'];
+                $usd = intval($bdt * $get->json()['data']['USD']);
                 return $usd;
             }
         }else{
