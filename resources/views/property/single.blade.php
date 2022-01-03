@@ -9,7 +9,7 @@
          <div class="flex justify-between items-center w-full py-8">
              <div>
                  <h2 class="text-3xl text-gray-500 mb-5">{{$property_single->name}}</h2>
-                 <span class="text-xl text-gray-600">Price: <strong class="text-3xl text-red-700">{{$property_single->price}} BDT</strong></span>
+                 <span class="text-xl text-gray-600">Price: <strong class="text-3xl text-red-700">{{$property->dynmic_price($property->price)}}</strong></span>
              </div>
              <div>
                  <span class="px-4 py-4 border-2 border-gray-500">Print</span>
