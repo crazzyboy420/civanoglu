@@ -17,7 +17,7 @@
     <div class="min-w-max text-2xl flex">
         <div class="flex mr-8 items-center">
             <a class="mr-3 mt-1 text-xl text-white" href="{{route('currency','usd')}}">$</a>
-            <a style="" class="text-white text-xl md:font-bold" href="{{route('currency','bdt')}}">৳</a>
+            <a style="" class="text-white text-xl md:font-bold mt-1 md:mt-0" href="{{route('currency','bdt')}}">৳</a>
         </div>
         <div class="flex">
             <a href="{{LaravelLocalization::getLocalizedUrl('bn')}}">🇧🇩</a>
