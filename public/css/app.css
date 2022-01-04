@@ -32509,6 +32509,10 @@ button.delete span:nth-child(2) {
   transform: rotate(-45deg);
 }
 
+.bdt{
+  font-size: 28px;
+}
+
 @media screen and (max-width: 640px){
   .single-gallery-item{
     height: 250px !important;
@@ -32540,7 +32544,8 @@ button.delete span:nth-child(2) {
   }
 
   .bdt{
-    font-size: 16px;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 }
 
