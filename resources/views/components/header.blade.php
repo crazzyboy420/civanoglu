@@ -1,10 +1,10 @@
-<div class="fixed py-2 w-full top-0 px-12 flex flex-wrap justify-between items-center z-30 sticy-header {{request()->routeIs('home')? '':'genarel-header'}}">
+<div class="fixed py-2 w-full top-0 px-4  md:px-12 flex flex-wrap justify-between items-center z-30 sticy-header {{request()->routeIs('home')? '':'genarel-header'}}">
     <a href="{{route('home')}}" class="min-w-max">
-        <img src="/img/logo.png" alt="">
+        <img class="w-24 md:min-w-max py-2 md:py-0" src="/img/logo.png" alt="">
     </a>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-    <div class="min-w-max">
-        <ul class="flex justify-center">
+    <div class="min-w-max md:block civanoglu-menu">
+        <ul class="md:flex justify-center">
             <li><a class="inline-block p-4 text-white" href="{{route('home')}}">Home</a></li>
             <li><a class="inline-block p-4 text-white" href="{{route('propertise')}}?type=0">Land</a></li>
             <li><a class="inline-block p-4 text-white" href="{{route('propertise')}}?type=2">{{__('Villa')}}</a></li>
@@ -23,6 +23,9 @@
             <a href="{{LaravelLocalization::getLocalizedUrl('bn')}}">🇧🇩</a>
             <a class="ml-3" href="{{LaravelLocalization::getLocalizedUrl('en')}}">🇺🇸</a>
         </div>
+    </div>
+    <div class="min-w-max md:hidden">
+        <i class="text-white cursor-pointer moblile-menu" data-feather="menu"></i>
     </div>
 </div>
 @if(!request()->routeIs('home'))

@@ -18,9 +18,16 @@
         "lodash": "^4.17.19",
         "postcss": "^8.2.1",
         "postcss-import": "^12.0.1",
+        "resolve-url-loader": "^4.0.0",
+        "sass": "^1.45.2",
+        "sass-loader": "^12.1.0",
+        "stylus": "^0.56.0",
+        "stylus-loader": "^6.2.0",
         "tailwindcss": "^2.0.2"
     },
     "dependencies": {
-        "jquery": "^3.6.0"
+        "feather-icons": "^4.28.0",
+        "jquery": "^3.6.0",
+        "lity": "^2.4.1"
     }
 }

@@ -4,11 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\admin\PageController;
-use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\admin\LocationController;
 use App\Http\Controllers\admin\UserController;
+use App\Http\Controllers\admin\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,5 +54,8 @@ Route::middleware(['auth'])->group(function(){
 
     //USER CRUD
     Route::resource('admin-user',UserController::class);
+
+    //Contact CROUD
+    Route::resource('contact-mail',ContactController::class);
 });
 require __DIR__.'/auth.php';

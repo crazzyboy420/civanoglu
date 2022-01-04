@@ -32445,6 +32445,10 @@ button.gallery-arrow.arrow-prev.slick-arrow {
   color: #ddd;
 }
 
+.vartical-search-form >form>div>span {
+  display: none !important;
+}
+
 .civanoglu-input{
   width: 100%;
   border-width: 1px;
@@ -32503,6 +32507,37 @@ button.delete span:nth-child(1) {
 
 button.delete span:nth-child(2) {
   transform: rotate(-45deg);
+}
+
+@media screen and (max-width: 640px){
+  .single-gallery-item{
+    height: 250px !important;
+  }
+
+  .civanoglu-menu{
+    display: none;
+  }
+
+  .civanoglu-menu.active{
+    display: block;
+  }
+
+  .civanoglu-menu{
+    position: absolute;
+    top: 61px;
+    z-index: 2;
+    background: #fff;
+    width: 100%;
+    left: 0;
+  }
+
+  .civanoglu-menu li a {
+    color: #333;
+  }
+
+  .civanoglu-menu.active {
+    box-shadow: 0px 9px 7px #ddd;
+  }
 }
 
 @media (min-width: 640px) {

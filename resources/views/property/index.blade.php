@@ -1,13 +1,13 @@
 <x-guest-layout>
     <div style="border-bottom: 1px solid #ddd" class="bg-white">
         <div class="container">
-            <div class="py-4 "><a href="{{route('home')}}" class="text-xl text-red-500">Property </a>Propertise</div>
+            <div class="py-4 mx-2 md:mx-0"><a href="{{route('home')}}" class="text-xl text-red-500">Property </a>Propertise</div>
         </div>
     </div>
     <div class="bg-white">
         <div class="container">
-            <div class="flex justify-between items-center w-full py-8">
-                <div>
+            <div class="md:flex justify-between mx-2 md:mx-0 items-center w-full py-8">
+                <div class="mb-4 md:mb-0">
                     <h2 class="text-3xl text-gray-500 mb-5">
                         Propertise
                         @if(request('type') == '0')
@@ -19,7 +19,7 @@
                         @endif
                     </h2>
                 </div>
-                <div>
+                <div class="mt-10 md:mt-0">
                     <span class="px-4 py-4 border-2 border-gray-500">Print</span>
                     <span class="px-4 py-4 border-2 border-gray-500">Save</span>
                     <span class="px-4 py-4 border-2 border-gray-500">Share</span>
@@ -28,13 +28,13 @@
         </div>
     </div>
     <div class="" style="background-color: #f7f5f2">
-        <div class="container w-full flex pt-8">
-            <div class="w-9/12 pr-6">
-                <div class="grid grid-cols-3 -mr-2 text-left flex-wrap">
+        <div class="container w-full md:flex pt-8">
+            <div class="md:w-9/12 md:pr-6 mx-2 md:mx-0">
+                <div class="grid md:grid-cols-3 md:-mr-2 w-full text-left">
                     @include('components.property-cart',['latest_property' =>$all_property]);
                 </div>
             </div>
-            <div class="w-3/12 vartical-search-form">
+            <div class="md:w-3/12 w-full vartical-search-form my-6 md:my-0 px-2 md:px-2">
                @include('components.property-search-form')
             </div>
         </div>

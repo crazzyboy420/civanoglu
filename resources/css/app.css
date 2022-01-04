@@ -2,6 +2,8 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+
+
 @font-face {
     font-family: 'Studio Sans DEMO';
     src: url('../fonts/StudioSansDEMO.eot');
@@ -163,6 +165,9 @@ button.gallery-arrow.arrow-prev.slick-arrow {
     margin-bottom: 5px;
     color: #ddd;
 }
+.vartical-search-form >form>div>span {
+    display: none !important;
+}
 .civanoglu-input{
     @apply w-full border border-gray-600 py-2 px-4 focus:ring-0 focus:border-gray-500
 }
@@ -193,4 +198,29 @@ button.delete span:nth-child(1) {
 
 button.delete span:nth-child(2) {
     transform: rotate(-45deg);
+}
+@media screen and (max-width: 640px){
+    .single-gallery-item{
+        height: 250px !important;
+    }
+    .civanoglu-menu{
+        display: none;
+    }
+    .civanoglu-menu.active{
+        display: block;
+    }
+    .civanoglu-menu{
+        position: absolute;
+        top: 61px;
+        z-index: 2;
+        background: #fff;
+        width: 100%;
+        left: 0;
+    }
+    .civanoglu-menu li a {
+        color: #333;
+    }
+    .civanoglu-menu.active {
+        box-shadow: 0px 9px 7px #ddd;
+    }
 }
